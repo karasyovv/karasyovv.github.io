@@ -1,36 +1,49 @@
-@font-face {
-    font-family: 'Roboto Slab';
-    src: url('../fonts/RobotoSlab-Regular.woff2') format('woff2'),
-         url('../fonts/RobotoSlab-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+:root {
+    /* Основні кольори Agridera */
+    --agridera-green: #4e9b46;
+    --agridera-grey-dark: #333333;
+    --agridera-grey-light: #999999;
+    
+    /* Шрифти */
+    --serif-font: 'Lora', serif;
+    --sans-serif-font: 'Open Sans', sans-serif;
 }
 
-@font-face {
-    font-family: 'Roboto Slab';
-    src: url('../fonts/RobotoSlab-Bold.woff2') format('woff2'),
-         url('../fonts/RobotoSlab-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
+body {
+    font-family: var(--sans-serif-font);
+    color: var(--agridera-grey-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.header-with-bg {
-    background-image: url('../images/header-bg.jpg'); 
-    background-size: cover;
-    background-position: center;
+/* Шрифтові утиліти */
+.serif-font {
+    font-family: var(--serif-font);
 }
 
-.hero-banner {
-    max-height: 300px;
+/* Кольорові утиліти, які не покриває Bootstrap */
+.text-green {
+    color: var(--agridera-green) !important;
 }
 
-.nav-hover:hover {
-    text-decoration: underline !important;
-}
-.border-top-green {
-    border-top: 3px solid #8cc63f; 
+.text-secondary {
+    color: var(--agridera-grey-dark) !important;
 }
 
-.tomato-card {
-    aspect-ratio: 1 / 1;
+.text-muted {
+    color: var(--agridera-grey-light) !important;
+}
+
+/* Утиліти розміру шрифту (fs-7/fs-8, яких немає в Bootstrap) */
+.fs-7 {
+    font-size: 14px;
+}
+
+.fs-8 {
+    font-size: 12px;
+}
+
+.fs-9 {
+    font-size: 10px;
 }

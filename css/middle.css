@@ -1,114 +1,76 @@
 .middle-content {
-    background-color: #fcfcfc;
     position: relative;
+    z-index: 1;
 }
 
-.rounded-img {
-    border-radius: 5px;
-}
-
-.vision-section h2, .mission-section h2 {
-    font-size: 36px;
-    color: #2c3e50;
-}
-
-.vision-section p, .mission-section p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #666;
-}
-
-.video-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.play-btn {
+.middle-content::before {
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    color: #5b9b55;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-image: url('../images/background-tomato.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
 }
 
-.activities-section {
-    background-color: #f5f7f6;
-    padding-top: 60px;
-    padding-bottom: 60px;
+/* Кастомізація заголовків */
+.main-title {
+    font-size: 36px;
 }
 
-.activity-item h4 {
-    font-size: 18px;
-    margin-bottom: 15px;
+.sub-title {
+    font-size: 28px;
+    line-height: 1.2;
 }
 
-.activity-item p {
-    font-size: 13px;
-    color: #666;
-    padding: 0 20px;
+/* Налаштування зображення rd1.png */
+.rd1-image {
+    max-width: 250px;
+    margin-left: -20px; /* Щоб вирівняти з текстом, бо іконка rd1.png має власне поле */
 }
 
-.activity-item img {
-    height: 120px;
-    object-fit: contain;
+/* Налаштування тонких сірих ліній */
+hr {
+    opacity: 1;
+    border-top: 1px solid #dddddd;
 }
 
-body {
-    background-color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Кастомізація списків Plant, Fruit, Cycle (зелені маркери) */
+.plant-list li, .fruit-list li, .cycle-list li {
+    position: relative;
+    padding-left: 18px; /* Місце для маркера */
 }
 
-.hero-image-container {
-    max-height: 250px; 
-    overflow: hidden;
+.plant-list li::before, .fruit-list li::before, .cycle-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px; /* Вирівнювання по висоті тексту */
+    width: 8px; /* Розмір маркера */
+    height: 8px;
+    background-color: var(--agridera-green);
+    border-radius: 50%; /* Кружечок */
 }
 
-.hero-image {
-    object-fit: cover;
-    object-position: center;
+/* Налаштування зображення tm1.png */
+.tm1-image {
+    max-width: 100%;
 }
 
-.content-wrapper {
-    max-width: 1100px;
+/* Кастомізація кнопки Download PDF */
+.download-pdf-btn {
+    color: var(--agridera-green);
+    border-color: var(--agridera-green);
 }
 
-.nav-link {
-    color: #808080;
-    font-size: 0.95rem;
-}
-
-.nav-link:hover {
-    color: #555555;
-}
-
-.logo-placeholder {
-    line-height: 1.1;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #334252;
-}
-
-.info-box-v2 {
-    background-color: #143d1a; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.border-top-green {
-    border-top: 3px solid #8cc63f; 
-}
-
-.tomato-card {
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+.download-pdf-btn:hover {
+    background-color: var(--agridera-green);
+    border-color: var(--agridera-green);
+    color: white;
 }
