@@ -1,29 +1,44 @@
-footer.bg-dark {
-    background-color: #2b2b2b; /* Трохи темніший сірий, як у макеті */
+.bottom-footer {
+    background-color: #2b2b2b;
 }
 
-.footer-links li a {
-    color: white !important;
+.footer-nav a {
+    color: #ffffff;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
 }
 
-.footer-links li a:hover {
-    color: var(--agridera-green) !important;
+.footer-nav a:hover {
+    color: var(--agridera-green);
 }
 
 .social-icons a {
-    width: 26px;
-    height: 26px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #999999 !important;
-    border: 1px solid #999999 !important;
+    border: 1px solid #999999;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.social-icons a img {
+    max-width: 14px;
+    max-height: 14px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .social-icons a:hover {
-    color: white !important;
-    border-color: white !important;
     background-color: #222222;
+    border-color: #ffffff;
+}
+
+.social-icons a:hover img {
+    opacity: 1;
 }

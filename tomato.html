@@ -5,27 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomato Categories</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css"> <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/middle.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
 
-<header class="py-3 bg-white">
-    <div class="container d-flex flex-wrap justify-content-between align-items-center">
-        <a href="index.html" class="d-flex align-items-center text-decoration-none">
-            <img src="images/Logo.png" alt="Agridera Logo" style="max-height: 70px;">
-        </a>
-        <div class="d-flex flex-column align-items-end">
-            <div class="mb-2 d-flex justify-content-end">
-                <input type="text" class="form-control form-control-sm border-success rounded-pill px-3" placeholder="Search" style="width: 220px;">
+<header class="top-header py-3">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <img src="images/Logo.png" alt="Agridera" class="img-fluid logo">
             </div>
-            <ul class="nav">
-                <li class="nav-item"><a href="index.html" class="nav-link link-dark px-2 fw-semibold">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link link-dark px-2 fw-semibold">Company Profile</a></li>
-                <li class="nav-item"><a href="#" class="nav-link link-dark px-2 fw-semibold">Products</a></li>
-                <li class="nav-item"><a href="#" class="nav-link link-dark px-2 fw-semibold">Services</a></li>
-                <li class="nav-item"><a href="#" class="nav-link link-dark px-2 fw-semibold">R & D</a></li>
-                <li class="nav-item"><a href="#" class="nav-link link-dark px-2 fw-semibold">Contact</a></li>
-            </ul>
+            <div class="col-md-9 d-flex flex-column align-items-end">
+                <div class="search-box mb-3">
+                    <input type="text" placeholder="Search">
+                    <i>🔍</i>
+                </div>
+                    <nav class="top-nav d-flex gap-3 flex-wrap justify-content-center justify-content-md-end">
+                        <a href="index.html">Home</a>
+                        <a href="#">Company Profile</a>
+                        <a href="tomato.html">Products</a>
+                        <a href="#">Services</a>
+                        <a href="#">R & D</a>
+                        <a href="contact.html">Contact</a>
+                    </nav>
+            </div>
         </div>
     </div>
 </header>
@@ -75,18 +84,67 @@
             </div>
         </div>
 
-        <div class="row g-4">
-            <div class="col-6 col-md-4 col-lg-3"><img src="images/image 3.png" class="img-fluid w-100 object-fit-cover tomato-card" alt="Tomato"></div>
-            <div class="col-6 col-md-4 col-lg-3"><img src="images/image 3(1).png" class="img-fluid w-100 object-fit-cover tomato-card" alt="Tomato"></div>
-            <div class="col-6 col-md-4 col-lg-3"><img src="images/image 3(2).png" class="img-fluid w-100 object-fit-cover tomato-card" alt="Tomato"></div>
-            <div class="col-6 col-md-4 col-lg-3"><img src="images/image 3(3).png" class="img-fluid w-100 object-fit-cover tomato-card" alt="Tomato"></div>
-            <div class="col-6 col-md-4 col-lg-3"><img src="images/image 3(4).png" class="img-fluid w-100 object-fit-cover tomato-card" alt="Tomato"></div>
-            <div class="col-6 col-md-4 col-lg-3"><img src="images/image 3(5).png" class="img-fluid w-100 object-fit-cover tomato-card" alt="Tomato"></div>
-            <div class="col-6 col-md-4 col-lg-3"><img src="images/image 3(6).png" class="img-fluid w-100 object-fit-cover tomato-card" alt="Tomato"></div>
-            <div class="col-6 col-md-4 col-lg-3"><img src="images/image 3(7).png" class="img-fluid w-100 object-fit-cover tomato-card" alt="Tomato"></div>
-        </div>
+<div class="row g-4 mt-4">
+    <div class="col-6 col-md-4 col-lg-3 text-center">
+        <a href="tomatoone.html" class="text-decoration-none">
+            <img src="images/image 3.png" class="img-fluid w-100 object-fit-cover tomato-card mb-2" alt="Tomato">
+            <h6 class="text-green fw-bold">TomatoTAG 1002</h6>
+        </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3 text-center">
+        <a href="tomatoone.html" class="text-decoration-none">
+            <img src="images/image 3(1).png" class="img-fluid w-100 object-fit-cover tomato-card mb-2" alt="Tomato">
+            <h6 class="text-green fw-bold">TomatoTAG 1003</h6>
+        </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3 text-center">
+        <a href="tomatoone.html" class="text-decoration-none">
+            <img src="images/image 3(2).png" class="img-fluid w-100 object-fit-cover tomato-card mb-2" alt="Tomato">
+            <h6 class="text-green fw-bold">TomatoTAG 1004</h6>
+        </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3 text-center">
+        <a href="tomatoone.html" class="text-decoration-none">
+            <img src="images/image 3(3).png" class="img-fluid w-100 object-fit-cover tomato-card mb-2" alt="Tomato">
+            <h6 class="text-green fw-bold">TomatoTAG 1005</h6>
+        </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3 text-center">
+        <a href="tomatoone.html" class="text-decoration-none">
+            <img src="images/image 3(4).png" class="img-fluid w-100 object-fit-cover tomato-card mb-2" alt="Tomato">
+            <h6 class="text-green fw-bold">TomatoTAG 1006</h6>
+        </a>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3 text-center">
+        <a href="tomatoone.html" class="text-decoration-none">
+            <img src="images/image 3(5).png" class="img-fluid w-100 object-fit-cover tomato-card mb-2" alt="Tomato">
+            <h6 class="text-green fw-bold">TomatoTAG 1007</h6>
+        </a>
+    </div>
+</div>
     </div>
 </main>
+
+<footer class="bottom-footer py-4">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+        <nav class="footer-nav d-flex gap-3">
+            <a href="#">PROFILE</a>
+            <a href="#">MANAGEMENT</a>
+            <a href="#">PRODUCTS</a>
+            <a href="#">R&D</a>
+            <a href="#">LINKS</a>
+            <a href="#">SITEMAP</a>
+            <a href="#">CONTACT</a>
+        </nav>
+        <div class="social-icons d-flex gap-2">
+            <a href="#"><img src="images/ico_in.png" alt="LinkedIn"></a>
+            <a href="#"><img src="images/ico_inst.png" alt="Instagram"></a>
+            <a href="#"><img src="images/ico_tube.png" alt="YouTube"></a>
+            <a href="#"><img src="images/ico_tw.png" alt="Twitter"></a>
+            <a href="#"><img src="images/ico_fb.png" alt="Facebook"></a>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

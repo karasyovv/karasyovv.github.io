@@ -4,128 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agridera Seeds and Agriculture</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/middle.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-    <header class="top-header container py-3">
-        <div class="row align-items-center">
-            <div class="col-md-3">
-                <img src="images/Logo.png" alt="Agridera" class="img-fluid logo">
-            </div>
-            <div class="col-md-9 text-right">
-                <div class="search-box mb-2">
-                    <input type="text" placeholder="Search">
-                    <span>🔍</span>
+    <header class="top-header py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
+                    <a href="index.html">
+                        <img src="images/Logo.png" alt="Agridera" class="img-fluid logo">
+                    </a>
                 </div>
-                <nav class="top-nav">
-                    <a href="#">Home</a>
-                    <a href="#">Company Profile</a>
-                    <a href="#">Products</a>
-                    <a href="#">Services</a>
-                    <a href="#">R & D</a>
-                    <a href="#">Contact</a>
-                </nav>
+                <div class="col-md-9 d-flex flex-column align-items-center align-items-md-end">
+                    <div class="search-box mb-3">
+                        <input type="text" placeholder="Search">
+                        <i>🔍</i>
+                    </div>
+                    <nav class="top-nav d-flex gap-3 flex-wrap justify-content-center justify-content-md-end">
+                        <a href="index.html">Home</a>
+                        <a href="#">Company Profile</a>
+                        <a href="tomato.html">Products</a>
+                        <a href="#">Services</a>
+                        <a href="#">R & D</a>
+                        <a href="contact.html">Contact</a>
+                    </nav>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="hero-section">
-        <div class="container text-center text-white hero-content">
-            <h1>Agridera Seeds and Agriculture Ltd</h1>
-            <a href="#" class="btn btn-green mt-4">READ MORE</a>
-        </div>
-    </section>
+    <img src="images/waves-banner.png" alt="Agridera Banner" class="top-page-banner w-100">
 
-    <section class="features-bar py-4">
-        <div class="container">
-            <div class="row text-center d-flex justify-content-between align-items-end">
-                <div class="col feature-item"><img src="images/1.png" alt="Wheat"></div>
-                <div class="col feature-item"><img src="images/2.png" alt="Watermelon"></div>
-                <div class="col feature-item"><img src="images/333.png" alt="Clover"></div>
-                <div class="col feature-item"><img src="images/4.png" alt="Sunflower"></div>
-                <div class="col feature-item"><img src="images/5.png" alt="Tomato"></div>
-                <div class="col feature-item"><img src="images/7.png" alt="Eggplant"></div>
-                <div class="col feature-item"><img src="images/7.png" alt="Ornamental"></div>
-            </div>
-        </div>
-    </section>
+    <main class="flex-grow-1">
 
-    <main class="middle-content">
-        <section class="container py-5 vision-section">
-            <div class="row align-items-center">
-                <div class="col-md-5">
-                    <h2>Vision</h2>
-                    <div class="green-dots">•••••</div>
-                    <p>We believe in long-term growth with an emphasis on the potential of emerging markets. We also support the global need of feeding the growing population.</p>
-                </div>
-                <div class="col-md-6 offset-md-1">
-                    <img src="images/image 333.png" alt="Vision" class="img-fluid rounded-img shadow">
-                </div>
-            </div>
-        </section>
-
-        <section class="container py-5 mission-section">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="video-wrapper">
-                        <img src="images/image 2.png" alt="Mission" class="img-fluid rounded-img shadow">
-                        <div class="play-btn">▶</div>
+        <section class="category-icons-section py-4 bg-white border-bottom border-top">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 text-center">
+                    <div class="category-icon-item">
+                        <img src="images/icon-wheat.png" alt="Wheat"style="width: 60px; height: auto;">
+                    </div>
+                    <div class="category-icon-item">
+                        <img src="images/icon-watermelon.png" alt="Watermelon" style="width: 190px; height: auto;">
+                    </div>
+                    <div class="category-icon-item">
+                        <img src="images/icon-clover.png" alt="Clover"style="width: 60px; height: auto;">
+                    </div>
+                    <div class="category-icon-item">
+                        <img src="images/icon-sunflower.png" alt="Sunflower"style="width: 180px; height: auto;">
+                    </div>
+                    <div class="category-icon-item">
+                        <img src="images/icon-tomato.png" alt="Tomato"style="width: 70px; height: auto;">
+                    </div>
+                    <div class="category-icon-item">
+                        <img src="images/icon-eggplant.png" alt="Eggplant"style="width: 110px; height: auto;">
+                    </div>
+                    <div class="category-icon-item">
+                        <img src="images/icon-ornamental.png" alt="Ornamental"style="width: 170px; height: auto;">
                     </div>
                 </div>
-                <div class="col-md-5 offset-md-1">
-                    <h2>Mission</h2>
-                    <div class="green-dots">•••••</div>
-                    <p>Breeding and marketing seeds for advanced field crops and vegetable varieties that provide an added value to all supply chain partners.</p>
+            </div>
+        </section>
+
+        <section class="vision-mission-section position-relative py-5">
+            <div class="container py-4">
+                <div class="row align-items-center mb-5 pb-5">
+                    <div class="col-md-5 pe-md-5">
+                        <h2 class="section-title">Vision</h2>
+                        <div class="section-divider">★★★★★</div>
+                        <p class="section-text mt-4">We believe in long-term growth with an emphasis on the potential of emerging markets. We also support the global need of feeding the growing population.</p>
+                    </div>
+                    <div class="col-md-7 text-center">
+                        <img src="images/vision.jpg" alt="Vision" class="img-fluid rounded-3 shadow-soft">
+                    </div>
+                </div>
+
+                <div class="row align-items-center mt-5">
+                    <div class="col-md-7 order-2 order-md-1 text-center position-relative">
+                        <div class="video-thumbnail-wrapper">
+                            <img src="images/mission.jpg" alt="Mission" class="img-fluid rounded-3 shadow-soft">
+                            <div class="play-button-overlay">
+                                <div class="play-triangle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 order-1 order-md-2 ps-md-5">
+                        <h2 class="section-title">Mission</h2>
+                        <div class="section-divider">★★★★★</div>
+                        <p class="section-text mt-4">Breeding and marketing seeds for advanced field crops and vegetable varieties that provide an added value to all supply chain partners.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="container py-5 activities-section text-center">
-            <h2 class="mb-2">Agridera's main activities</h2>
-            <div class="green-dots text-center mb-5">•••••</div>
-            
-            <div class="row">
-                <div class="col-md-4 activity-item">
-                    <img src="images/image 4.png" alt="Open field crop seeds" class="img-fluid mb-3">
-                    <h4 class="text-green">Open field crop seeds</h4>
-                    <p>wheat, cotton, legumes, hybrid confection sunflower</p>
-                </div>
-                <div class="col-md-4 activity-item">
-                    <img src="images/image 5.png" alt="Vegetable seeds" class="img-fluid mb-3">
-                    <h4 class="text-green">Vegetable seeds</h4>
-                    <p>hybrid open field tomatoes, eggplant, onion, paprika, etc.</p>
-                </div>
-                <div class="col-md-4 activity-item">
-                    <img src="images/3 1.png" alt="Ornamental seeds" class="img-fluid mb-3">
-                    <h4 class="text-green">Ornamental seeds</h4>
-                    <p>hybrid cut sunflowers, hybrid patio tomatoes, Bells of Irland, etc.</p>
+        <section class="main-activities-section py-5">
+            <div class="container text-center py-4">
+                <h2 class="section-title">Agridera’s main activities</h2>
+                <div class="section-divider mb-5">★★★★★</div>
+                
+                <div class="row g-4 mt-4">
+                    <div class="col-md-4">
+                        <div class="activity-card">
+                            <img src="images/cotton.png" alt="Cotton" class="img-fluid activity-img mb-4">
+                            <h4 class="activity-subtitle">Open field crop seeds</h4>
+                            <p class="activity-text mx-auto mt-2">wheat, cotton, legumes, hybrid confection sunflower</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="activity-card">
+                            <img src="images/tomato-isolated.png" alt="Tomato" class="img-fluid activity-img mb-4">
+                            <h4 class="activity-subtitle">Vegetable seeds</h4>
+                            <p class="activity-text mx-auto mt-2">hybrid open field tomatoes, eggplant, onion, paprika, etc.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="activity-card">
+                            <img src="images/sunflowers.png" alt="Sunflowers" class="img-fluid activity-img mb-4">
+                            <h4 class="activity-subtitle">Ornamental seeds</h4>
+                            <p class="activity-text mx-auto mt-2">hybrid cut sunflowers, hybrid patio tomatoes, Bells of Irland, etc.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bottom-footer py-4">
-        <div class="container d-flex justify-content-between align-items-center">
-            <nav class="footer-nav">
+    <footer class="bottom-footer py-4 mt-auto">
+        <div class="container d-flex justify-content-between align-items-center flex-column flex-md-row gap-4">
+            <nav class="footer-nav d-flex gap-3 flex-wrap justify-content-center">
                 <a href="#">PROFILE</a>
                 <a href="#">MANAGEMENT</a>
                 <a href="#">PRODUCTS</a>
                 <a href="#">R&D</a>
                 <a href="#">LINKS</a>
                 <a href="#">SITEMAP</a>
-                <a href="#">CONTACT</a>
+                <a href="contact.html">CONTACT</a>
             </nav>
-            <div class="social-icons">
-                <img src="images/ico_in.png" alt="LinkedIn">
-                <img src="images/ico_inst.png" alt="Instagram">
-                <img src="images/ico_tube.png" alt="YouTube">
-                <img src="images/ico_tw.png" alt="Twitter">
-                <img src="images/ico_fb.png" alt="Facebook">
+            <div class="social-icons d-flex gap-2">
+                <a href="#"><img src="images/ico_in.png" alt="LinkedIn"></a>
+                <a href="#"><img src="images/ico_inst.png" alt="Instagram"></a>
+                <a href="#"><img src="images/ico_tube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/ico_tw.png" alt="Twitter"></a>
+                <a href="#"><img src="images/ico_fb.png" alt="Facebook"></a>
             </div>
         </div>
     </footer>
