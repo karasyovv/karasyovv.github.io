@@ -1,0 +1,119 @@
+@media (max-width: 1920px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media (max-width: 1480px) {
+    .container {
+        max-width: 1200px;
+    }
+    .main-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .container {
+        max-width: 1140px;
+    }
+    .sub-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-right {
+        background-color: #f8f9fa;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .header-right.collapse:not(.show) {
+        display: none !important;
+    }
+    .search-bar input {
+        width: 80% !important;
+    }
+    .main-title {
+        font-size: 28px;
+    }
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-form-gap {
+        column-gap: 0;
+    }
+    .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .social-icons {
+        margin-top: 20px;
+    }
+    .rd1-image {
+        max-width: 200px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 414px) {
+    .main-title {
+        font-size: 24px;
+    }
+    .sub-title {
+        font-size: 20px;
+    }
+    .btn-submit {
+        width: 100%;
+        margin-top: 15px;
+    }
+    .captcha-input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 375px) {
+    .fs-8 {
+        font-size: 11px;
+    }
+    .fs-7 {
+        font-size: 13px;
+    }
+    .address-section {
+        padding: 40px 0;
+    }
+    .custom-input {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-title {
+        font-size: 20px;
+    }
+    .sub-title {
+        font-size: 18px;
+    }
+    .logo-img {
+        height: 40px !important;
+    }
+    .search-bar input {
+        width: 100% !important;
+    }
+}
