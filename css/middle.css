@@ -90,3 +90,19 @@
     font-size: 0.95rem;
     max-width: 240px;
 }
+.product-img-wrapper {
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.product-img-wrapper img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    object-fit: cover;
+}

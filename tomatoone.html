@@ -3,149 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TomatoTAG 1002 (TAG 809) - Agridera Seeds</title>
+    <title>Product Details</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css"> <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/middle.css">
     <link rel="stylesheet" href="css/footer.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/responsive.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
+<div id="app">
+    <header class="bg-light border-bottom position-relative">
+        <div class="container py-3 d-flex justify-content-between align-items-center">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Agridera Logo" class="logo-img" style="height: 50px;">
+            </a>
+            
+            <button class="navbar-toggler d-lg-none border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
+                <i class="fas fa-bars fs-2 text-success"></i>
+            </button>
 
-<header class="bg-light border-bottom position-relative">
-    <div class="container py-3 d-flex justify-content-between align-items-center">
-        <a href="index.html" class="logo-link">
-            <img src="images/logo.png" alt="Agridera Logo" class="logo-img" style="height: 50px;">
-        </a>
-        
-        <button class="navbar-toggler d-lg-none border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
-            <i class="fas fa-bars fs-2 text-success"></i>
-        </button>
-
-        <div class="header-right collapse d-lg-flex flex-column align-items-end gap-2" id="mobileNav">
-            <div class="search-bar mt-3 mt-lg-0 w-100 text-center text-lg-end">
-                <input type="text" placeholder="Search" class="form-control form-control-sm rounded-pill d-inline-block" style="width: auto;">
-                <i class="fas fa-search position-relative" style="left: -25px;"></i>
+            <div class="header-right collapse d-lg-flex flex-column align-items-end gap-2" id="mobileNav">
+                <div class="search-bar mt-3 mt-lg-0 w-100 text-center text-lg-end">
+                    <input type="text" placeholder="Search" class="form-control form-control-sm rounded-pill d-inline-block" style="width: auto;">
+                    <i class="fas fa-search position-relative" style="left: -25px;"></i>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-light p-0 mt-3 mt-lg-0 w-100">
+                    <ul class="navbar-nav gap-3 fs-8 flex-column flex-lg-row align-items-center w-100 justify-content-lg-end pb-3 pb-lg-0">
+                        <li class="nav-item"><a href="index.html" class="nav-link text-muted serif-font p-0">Home</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link text-muted serif-font p-0">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-light p-0 mt-3 mt-lg-0 w-100">
-                <ul class="navbar-nav gap-3 fs-8 flex-column flex-lg-row align-items-center w-100 justify-content-lg-end pb-3 pb-lg-0">
-                    <li class="nav-item"><a href="index.html" class="nav-link text-muted serif-font p-0">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-muted serif-font p-0">Company Profile</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-muted serif-font p-0">Products</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-muted serif-font p-0">Services</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-muted serif-font p-0">R & D</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link text-muted serif-font p-0">Contact</a></li>
-                </ul>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row" v-if="product && product.id">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <img :src="product.image" class="img-fluid rounded shadow-sm w-100 object-fit-cover" :alt="product.title" style="max-height: 400px;">
+            </div>
+            
+            <div class="col-md-6">
+                <h1 class="serif-font text-success mb-3">{{ product.title }}</h1>
+                <h4 class="text-secondary mb-4">{{ product.short_text }}</h4>
+                <p class="text-muted lh-lg mb-5">{{ product.desc }}</p>
+                
+                <div class="d-flex gap-3">
+                    <button class="btn btn-success px-4 py-2 fw-bold" @click="addToCart(product.id)" v-if="btnVisible === 0">
+                        Add to cart
+                    </button>
+                    
+                    <a href="contact.html" class="btn btn-primary px-4 py-2 fw-bold" v-if="btnVisible === 1">
+                        Go to cart
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div v-else class="text-center py-5">
+            <h3>Товар не знайдено</h3>
+            <a href="tomato.html" class="btn btn-outline-success mt-3">Повернутися до каталогу</a>
+        </div>
+    </main>
+
+    <footer class="bottom-footer py-4 mt-auto">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <nav class="footer-nav d-flex gap-3">
+                <a href="index.html">HOME</a>
+                <a href="contact.html">CONTACT</a>
             </nav>
+            <div class="social-icons d-flex gap-2">
+                <a href="#"><img src="images/ico_in.png" alt="LinkedIn"></a>
+                <a href="#"><img src="images/ico_inst.png" alt="Instagram"></a>
+                <a href="#"><img src="images/ico_tube.png" alt="YouTube"></a>
+            </div>
         </div>
-    </div>
-</header>
-
-<main class="container my-5 middle-content">
-  <div class="row">
-    <div class="col-lg-8">
-      <a href="index.html" class="text-muted text-decoration-none mb-4 d-block fs-8 p-0">
-        <i class="fas fa-arrow-left"></i> Return to all tomatoes
-      </a>
-      <h1 class="text-secondary fw-bold serif-font mb-1 main-title">TAG 1002 (TAG 809)</h1>
-      <h2 class="text-green fw-bold serif-font mb-4 sub-title">Tomato Determinate <br> Red Standard Round</h2>
-      
-      <div class="rating-stars mb-4 fs-7">
-        <i class="fas fa-star text-green"></i>
-        <i class="fas fa-star text-green"></i>
-        <i class="fas fa-star text-green"></i>
-        <i class="fas fa-star text-green"></i>
-        <i class="fas fa-star text-green"></i>
-      </div>
-
-      <img src="images/rd1.png" alt="High yield badge" class="mb-5 rd1-image">
-
-      <div class="characteristics-section">
-        <h3 class="text-green fw-bold text-uppercase fs-7 mb-2 serif-font">Characteristics</h3>
-        <hr class="border-secondary border-1 opacity-100 mb-3">
-        
-        <div class="char-block mb-3">
-          <h4 class="text-secondary fw-bold fs-7 mb-1 serif-font">Resistance</h4>
-          <p class="text-secondary fs-8 mb-1 p-0">HR: ToMV:0-2; Fol: 1,2; Ve/Vd;</p>
-          <p class="text-secondary fs-8 p-0">IR: TYLCV</p>
-        </div>
-        <hr class="border-secondary border-1 opacity-100 mb-3">
-
-        <div class="char-block mb-3">
-          <h4 class="text-secondary fw-bold fs-7 mb-1 serif-font">Plant</h4>
-          <ul class="text-secondary list-unstyled fs-8 plant-list p-0">
-            <li>Strong vigor that provides good leaf coverage.</li>
-            <li>Very high productivity with good fruit setting.</li>
-            <li>Early matured variety.</li>
-          </ul>
-        </div>
-        <hr class="border-secondary border-1 opacity-100 mb-3">
-
-        <div class="char-block mb-3">
-          <h4 class="text-secondary fw-bold fs-7 mb-1 serif-font">Fruit</h4>
-          <ul class="text-secondary list-unstyled fs-8 fruit-list p-0">
-            <li>Long shelf life on plant and post harvest.</li>
-            <li>Nice shiny attractive deep red color.</li>
-            <li>Average fruit size: 140 – 160 grams.</li>
-          </ul>
-        </div>
-        <hr class="border-secondary border-1 opacity-100 mb-3">
-      </div>
-    </div>
-
-    <div class="col-lg-4 d-flex flex-column align-items-center">
-      <img src="images/tm1.png" alt="Tomato photo" class="img-fluid tm1-image mb-4">
-      <a href="#" class="btn btn-outline-success rounded-pill d-flex align-items-center gap-2 download-pdf-btn mb-5 fs-8 fw-bold text-decoration-none">
-        <i class="far fa-file-pdf fs-6"></i> Download PDF
-      </a>
-      
-      <div class="meta-section w-100 px-lg-4 px-3 align-self-start">
-        <div class="meta-block mb-3">
-          <h4 class="text-secondary fw-bold fs-7 mb-1 serif-font">Cycle</h4>
-          <ul class="text-secondary list-unstyled fs-8 cycle-list p-0">
-            <li>Spring</li>
-            <li>Fall</li>
-            <li>Winter</li>
-          </ul>
-        </div>
-        <hr class="border-secondary border-1 opacity-100 mb-3">
-
-        <div class="meta-block mb-3">
-          <h4 class="text-secondary fw-bold fs-7 mb-1 serif-font">Color</h4>
-          <p class="text-secondary fs-8 p-0">Red</p>
-        </div>
-        <hr class="border-secondary border-1 opacity-100 mb-3">
-      </div>
-    </div>
-  </div>
-</main>
-<footer class="bottom-footer py-4">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap">
-        <nav class="footer-nav d-flex gap-3">
-            <a href="#">PROFILE</a>
-            <a href="#">MANAGEMENT</a>
-            <a href="#">PRODUCTS</a>
-            <a href="#">R&D</a>
-            <a href="#">LINKS</a>
-            <a href="#">SITEMAP</a>
-            <a href="#">CONTACT</a>
-        </nav>
-        <div class="social-icons d-flex gap-2">
-            <a href="#"><img src="images/ico_in.png" alt="LinkedIn"></a>
-            <a href="#"><img src="images/ico_inst.png" alt="Instagram"></a>
-            <a href="#"><img src="images/ico_tube.png" alt="YouTube"></a>
-            <a href="#"><img src="images/ico_tw.png" alt="Twitter"></a>
-            <a href="#"><img src="images/ico_fb.png" alt="Facebook"></a>
-        </div>
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </footer>
+</div>
 </body>
 </html>

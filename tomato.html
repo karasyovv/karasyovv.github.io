@@ -10,149 +10,92 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css"> <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/middle.css">
     <link rel="stylesheet" href="css/footer.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
+<div id="app">
+    
+    <header class="bg-light border-bottom position-relative">
+        <div class="container py-3 d-flex justify-content-between align-items-center">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Agridera Logo" class="logo-img" style="height: 50px;">
+            </a>
+            
+            <button class="navbar-toggler d-lg-none border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
+                <i class="fas fa-bars fs-2 text-success"></i>
+            </button>
 
-<header class="bg-light border-bottom position-relative">
-    <div class="container py-3 d-flex justify-content-between align-items-center">
-        <a href="index.html" class="logo-link">
-            <img src="images/logo.png" alt="Agridera Logo" class="logo-img" style="height: 50px;">
-        </a>
-        
-        <button class="navbar-toggler d-lg-none border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
-            <i class="fas fa-bars fs-2 text-success"></i>
-        </button>
-
-        <div class="header-right collapse d-lg-flex flex-column align-items-end gap-2" id="mobileNav">
-            <div class="search-bar mt-3 mt-lg-0 w-100 text-center text-lg-end">
-                <input type="text" placeholder="Search" class="form-control form-control-sm rounded-pill d-inline-block" style="width: auto;">
-                <i class="fas fa-search position-relative" style="left: -25px;"></i>
+            <div class="header-right collapse d-lg-flex flex-column align-items-end gap-2" id="mobileNav">
+                <div class="search-bar mt-3 mt-lg-0 w-100 text-center text-lg-end">
+                    <input type="text" placeholder="Search" class="form-control form-control-sm rounded-pill d-inline-block" style="width: auto;">
+                    <i class="fas fa-search position-relative" style="left: -25px;"></i>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-light p-0 mt-3 mt-lg-0 w-100">
+                    <ul class="navbar-nav gap-3 fs-8 flex-column flex-lg-row align-items-center w-100 justify-content-lg-end pb-3 pb-lg-0">
+                        <li class="nav-item"><a href="index.html" class="nav-link text-muted serif-font p-0">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-muted serif-font p-0">Company Profile</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-muted serif-font p-0">Products</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-muted serif-font p-0">Services</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-muted serif-font p-0">R & D</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link text-muted serif-font p-0">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-light p-0 mt-3 mt-lg-0 w-100">
-                <ul class="navbar-nav gap-3 fs-8 flex-column flex-lg-row align-items-center w-100 justify-content-lg-end pb-3 pb-lg-0">
-                    <li class="nav-item"><a href="index.html" class="nav-link text-muted serif-font p-0">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-muted serif-font p-0">Company Profile</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-muted serif-font p-0">Products</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-muted serif-font p-0">Services</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-muted serif-font p-0">R & D</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link text-muted serif-font p-0">Contact</a></li>
-                </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="container-fluid p-0 mb-4">
+            <img src="images/apple-banner.jpg" class="img-fluid w-100 top-page-banner" alt="Apple Banner">
+        </div>
+
+        <div class="container my-5">
+            <div class="d-flex align-items-center mb-4">
+                <h2 class="section-title mb-0 me-3">Apple Categories</h2>
+                <div class="section-divider flex-grow-1 border-bottom border-success border-2 opacity-50"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-3 text-center" v-for="item in products" :key="item.id">
+                    <a :href="'tomatoone.html#' + item.id" class="text-decoration-none">
+                        <div class="product-img-wrapper mb-2 rounded shadow-sm">
+                            <img :src="item.image" :alt="item.title">
+                        </div>
+                        <h6 class="text-green fw-bold">{{ item.title }}</h6>
+                        <p class="text-muted fs-7">{{ item.short_text }}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bottom-footer py-4">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <nav class="footer-nav d-flex gap-3">
+                <a href="#">PROFILE</a>
+                <a href="#">MANAGEMENT</a>
+                <a href="#">PRODUCTS</a>
+                <a href="#">R&D</a>
+                <a href="#">LINKS</a>
+                <a href="#">SITEMAP</a>
+                <a href="#">CONTACT</a>
             </nav>
+            <div class="social-icons d-flex gap-2">
+                <a href="#"><img src="images/ico_in.png" alt="LinkedIn"></a>
+                <a href="#"><img src="images/ico_inst.png" alt="Instagram"></a>
+                <a href="#"><img src="images/ico_tube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/ico_tw.png" alt="Twitter"></a>
+                <a href="#"><img src="images/ico_fb.png" alt="Facebook"></a>
+            </div>
         </div>
-    </div>
-</header>
+    </footer>
 
-<div class="w-100">
-    <img src="images/image 67.png" alt="Tomatoes" class="img-fluid w-100 object-fit-cover hero-banner">
 </div>
-
-<main class="container my-5 content-wrapper">
-    <h1 class="fw-bold mb-4 text-dark">Agridera Fresh Market Tomato Hybrids</h1>
-    
-    <p class="mb-4 text-secondary lh-lg">
-        Agridera aims to be one of the world's leading companies in the breeding, production, and marketing of tomato seeds. <strong class="text-dark">We invest intensively in research and development to provide solutions to growers and consumers in numerous countries around the world.</strong> In particular, we breed improved disease-resistant cultivars adapted to different markets globally.
-    </p>
-    
-    <p class="mb-4 text-secondary lh-lg">
-        Currently, emphasis is placed on combining Tomato Yellow Leaf Curl Virus (TYLCV) and Tomato Spotted Wilt Virus (TSWV) resistances with other soil borne diseases into superior tomato breeding lines and hybrids. Moreover, comprehensive efforts are being undertaken to develop varieties resistance to TBRFV virus (Tomato Brown Rugose Fruit Virus).
-    </p>
-    
-    <p class="mb-5 text-secondary lh-lg">
-        In terms of horticultural traits, breeding is for earliness, different fruit sizes, firmness, red fruit color, flavor, crack resistance, shelf life, and high/low temperature fruit set. Combinations of quality features and disease resistance are sought in a variety of types, namely round and elongated shapes.
-    </p>
-
-    <div class="mb-5 ps-4 border-start border-3 text-secondary lh-lg fw-semibold" style="border-color: #d9534f !important;">
-        Agridera Tomato breeding programs are focusing on three main segments: Greenhouse Indeterminate Tomatoes, Open-field Indeterminate Tomatoes, and Bush Type Open-field Tomatoes.
-    </div>
-
-    <div class="bg-white p-4 p-md-5 shadow-sm">
-        <div class="row mb-5 text-start">
-            <div class="col-md-4 mb-4 mb-md-0 pe-md-4">
-                <div class="border-top border-3 pt-3" style="border-color: #8cc63f !important;">
-                    <h5 class="fw-bold text-dark mb-3">Greenhouse Tomato<br>Breeding Program</h5>
-                    <p class="text-secondary small lh-lg m-0">This breeding is aimed for the Spanish and Turkish markets. For single and cluster picks, round fruit shape and resistances of TYLCV, TSWV, Nematodes and FORL (Fusarium oxysporum f.sp. radicis-lycopersici). Some hybrids may include more resistances, such as Cladosporium and Leveillula Taurica (Lv).</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4 mb-md-0 pe-md-4">
-                <div class="border-top border-3 pt-3" style="border-color: #8cc63f !important;">
-                    <h5 class="fw-bold text-dark mb-3">Open-field<br>Indeterminate Tomatoes</h5>
-                    <p class="text-secondary small lh-lg m-0">This breeding is for Brazilian, Moroccan, and Turkish markets. The main focus is on large round shape fruits (200 grams plus); and resistances of TYLCV, TSWV, Nematodes and FORL. In the near future, F3 (Fusarium oxysporum f.sp. lycopersici) will be included as basic resistance in our cultivars.</p>
-                </div>
-            </div>
-            <div class="col-md-4 pe-md-4">
-                <div class="border-top border-3 pt-3" style="border-color: #8cc63f !important;">
-                    <h5 class="fw-bold text-dark mb-3">Open-field<br>Bush Type Tomatoes</h5>
-                    <p class="text-secondary small lh-lg m-0">This breeding is for Mediterranean markets. We breed round and elongated shapes, standard sizes (140- 180 grams), and beef sizes (min. 180 grams up to 300 grams and more). We combine the resistances of TYLCV, TSWV and Nematodes as basic resistances in our hybrids. However, some hybrids may include more resistances, such as Cladosporium and Leveillula Taurica (Lv).</p>
-                </div>
-            </div>
-        </div>
-
-<div class="row g-4 mt-4">
-    <div class="col-6 col-md-4 col-lg-3 text-center">
-        <a href="tomatoone.html" class="text-decoration-none">
-            <img src="images/image 3.png" class="img-fluid w-100 object-fit-cover tomato-card mb-2" alt="Tomato">
-            <h6 class="text-green fw-bold">TomatoTAG 1002</h6>
-        </a>
-    </div>
-    <div class="col-6 col-md-4 col-lg-3 text-center">
-        <a href="tomatoone.html" class="text-decoration-none">
-            <img src="images/image 3(1).png" class="img-fluid w-100 object-fit-cover tomato-card mb-2" alt="Tomato">
-            <h6 class="text-green fw-bold">TomatoTAG 1003</h6>
-        </a>
-    </div>
-    <div class="col-6 col-md-4 col-lg-3 text-center">
-        <a href="tomatoone.html" class="text-decoration-none">
-            <img src="images/image 3(2).png" class="img-fluid w-100 object-fit-cover tomato-card mb-2" alt="Tomato">
-            <h6 class="text-green fw-bold">TomatoTAG 1004</h6>
-        </a>
-    </div>
-    <div class="col-6 col-md-4 col-lg-3 text-center">
-        <a href="tomatoone.html" class="text-decoration-none">
-            <img src="images/image 3(3).png" class="img-fluid w-100 object-fit-cover tomato-card mb-2" alt="Tomato">
-            <h6 class="text-green fw-bold">TomatoTAG 1005</h6>
-        </a>
-    </div>
-    <div class="col-6 col-md-4 col-lg-3 text-center">
-        <a href="tomatoone.html" class="text-decoration-none">
-            <img src="images/image 3(4).png" class="img-fluid w-100 object-fit-cover tomato-card mb-2" alt="Tomato">
-            <h6 class="text-green fw-bold">TomatoTAG 1006</h6>
-        </a>
-    </div>
-    <div class="col-6 col-md-4 col-lg-3 text-center">
-        <a href="tomatoone.html" class="text-decoration-none">
-            <img src="images/image 3(5).png" class="img-fluid w-100 object-fit-cover tomato-card mb-2" alt="Tomato">
-            <h6 class="text-green fw-bold">TomatoTAG 1007</h6>
-        </a>
-    </div>
-</div>
-    </div>
-</main>
-
-<footer class="bottom-footer py-4">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap">
-        <nav class="footer-nav d-flex gap-3">
-            <a href="#">PROFILE</a>
-            <a href="#">MANAGEMENT</a>
-            <a href="#">PRODUCTS</a>
-            <a href="#">R&D</a>
-            <a href="#">LINKS</a>
-            <a href="#">SITEMAP</a>
-            <a href="#">CONTACT</a>
-        </nav>
-        <div class="social-icons d-flex gap-2">
-            <a href="#"><img src="images/ico_in.png" alt="LinkedIn"></a>
-            <a href="#"><img src="images/ico_inst.png" alt="Instagram"></a>
-            <a href="#"><img src="images/ico_tube.png" alt="YouTube"></a>
-            <a href="#"><img src="images/ico_tw.png" alt="Twitter"></a>
-            <a href="#"><img src="images/ico_fb.png" alt="Facebook"></a>
-        </div>
-    </div>
-</footer>
-
 </body>
 </html>
